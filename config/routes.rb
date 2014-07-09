@@ -1,4 +1,5 @@
 OceanFood::Application.routes.draw do
+  devise_for :users
   resources :foods
 
   # The priority is based upon order of creation: first created -> highest priority.
