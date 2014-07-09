@@ -42,3 +42,5 @@ faye_server/log
 app/api/twitter.rb
 
 config/heroku_env.rb
+# Ignore application configuration
+/config/application.yml
