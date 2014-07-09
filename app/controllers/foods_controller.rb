@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_food, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /foods
   # GET /foods.json
   def index
