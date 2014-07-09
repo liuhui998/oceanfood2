@@ -19,30 +19,8 @@
 			<th></th>
       </tr>
     </thead>
-
+	  <%= render @foods %>
     <tbody>
-      <%= content_tag_for(:tr, @foods) do |food| %>
-            <td>
-			  <%= link_to food do %>
-				<%= image_tag food.image.thumb.url %>
-			  <% end %>
-			</td>
-            <td><%= food.name %></td>
-            <td><%= food.price %></td>
-            <td><%= food.memo %></td>
-
-			<td>
-			  <%= link_to  edit_food_path(food) , :class => "btn btn-default" do %>
-				<span class="glyphicon glyphicon-pencil"></span>
-				Edit
-			  <% end %>
-			  &nbsp;&nbsp;
-			  <%= link_to  food, method: :delete, data: { confirm: 'Are you sure?' }   , :class => "btn btn-danger" do %>
-			    <span class="glyphicon glyphicon-remove-circle"></span>
-			    Destroy
-			  <% end %>
-			</td>
-      <% end %>
     </tbody>
   </table>
 </div>
