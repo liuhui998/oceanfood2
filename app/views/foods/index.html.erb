@@ -14,9 +14,9 @@
             <th>Name</th>
             <th>Price</th>
             <th>Memo</th>
-            <th></th>
-        <th></th>
-        <th></th>
+
+
+			<th></th>
       </tr>
     </thead>
 
@@ -31,9 +31,17 @@
             <td><%= food.price %></td>
             <td><%= food.memo %></td>
 
-            <td><%= link_to 'Show', food %></td>
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<td>
+			  <%= link_to  edit_food_path(food) , :class => "btn btn-default" do %>
+				<span class="glyphicon glyphicon-pencil"></span>
+				Edit
+			  <% end %>
+			  &nbsp;&nbsp;
+			  <%= link_to  food, method: :delete, data: { confirm: 'Are you sure?' }   , :class => "btn btn-danger" do %>
+			    <span class="glyphicon glyphicon-remove-circle"></span>
+			    Destroy
+			  <% end %>
+			</td>
       <% end %>
     </tbody>
   </table>
