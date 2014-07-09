@@ -16,7 +16,10 @@ RailsAdmin.config do |config|
   ## == PaperTrail ==
   config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
   config.audit_with :paper_trail, 'Food', 'PaperTrail::Version' # PaperTrail >= 3.0.0  
-
+  
+  # Model
+  config.included_models = ["Food","User"]
+  
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
