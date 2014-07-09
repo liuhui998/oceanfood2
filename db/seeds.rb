@@ -22,5 +22,8 @@ User.destroy_all
   f4 = Food.create!(:image => food_image_file("maidong.jpg"), :name => "脉动", :price => 4, :memo => "提提神")
   f5 = Food.create!(:image => food_image_file("pepsi.jpg"), :name => "百式可乐", :price => 3, :memo => "汽水")
 }
+
 # 同学们这是 种子测试数据，部署到生产环境后一定要自己改一下
 User.create(email: "test@test.com", password: "12345678")
+
+User.create(email: "admin@test.com", password: "12345678", role: "admin")
