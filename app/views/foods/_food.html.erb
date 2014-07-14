@@ -1,4 +1,4 @@
-      <%= content_tag_for(:tr, @foods) do |food| %>
+      <%= content_tag_for(:tr, food) do |food| %>
             <td>
 			  <%= link_to food do %>
 				<%= image_tag food.image.thumb.url %>
