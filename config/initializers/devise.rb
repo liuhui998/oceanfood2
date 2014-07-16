@@ -8,7 +8,11 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '68fca61aefdffe51a32cd21e08e2bf641ec63631846fcf68858b58c7388a81e7745de819a7189a9c26cdad72ccf5523da1f5323f7f07c31af67289172c90be8a'
   #  ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
-  config.omniauth :google_oauth2,  ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], { access_type: "offline", approval_prompt: "" }
+  if Rails.env.production?
+    config.omniauth :google_oauth2,  ENV["PRO_GOOGLE_CLIENT_ID"], ENV["PRO_GOOGLE_CLIENT_SECRET"], { access_type: "offline", approval_prompt: "" }
+  else
+    config.omniauth :google_oauth2,  ENV["DEV_GOOGLE_CLIENT_ID"], ENV["DEV_GOOGLE_CLIENT_SECRET"], { access_type: "offline", approval_prompt: "" }    
+  end
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
