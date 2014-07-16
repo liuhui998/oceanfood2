@@ -8,7 +8,34 @@
 
 
 # 部署配置相关
-	
+
+## Google API Setup
+
+Go to 'https://console.developers.google.com'
+
+Select your project.
+
+Click 'APIs & auth'
+
+Make sure "Contacts API" and "Google+ API" are on.
+
+Go to Consent Screen, and provide a 'PRODUCT NAME'
+
+Wait 10 minutes for changes to take effect.
+
+记住要根据生产环境和开发环境申请两个不同的 Client ID
+
+最后还有两个环境变量要配：
+
+
+针对生产环境：
+
+	ENV["PRO_GOOGLE_CLIENT_ID"], ENV["PRO_GOOGLE_CLIENT_SECRET"]
+
+针对开发环境：
+
+	ENV["DEV_GOOGLE_CLIENT_ID"], ENV["DEV_GOOGLE_CLIENT_SECRET"]
+
 ## 使用 heroku 部署
 
 使用 heroku 创建一个新的 APP, APPNAME 是可以选的，不写的话，系统会给你自动生成一个名字
